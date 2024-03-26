@@ -1,35 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: antiquewhite; */
+  font-family: "Abril Fatface", serif;
+}
+
+.logo {
+  text-align: center;
+  padding: 20px;
+}
+h2 {
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+}
+.header {
+  text-align: center;
+  padding: 10px;
+}
+.header label {
+  font-size: 20px;
+}
+input {
+  width: 60%;
+  padding: 0.7rem;
+  border-radius: 10px;
+}
+
 .container1 {
-  background-color: antiquewhite;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  gap: 2rem;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 1rem;
+  margin-top: 20px;
+  background-image: url(./components/assets/bgNBA.jpg);
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.container1 .image-container {
-  width: 300px;
-  height: 450px;
+.image-container {
+  padding: 30px;
+}
+.card {
   position: relative;
+  width: 350px;
+  height: 470px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid;
+  text-align: center;
+  padding-top: 10px;
+  box-shadow: 4px 4px 20px black;
 }
 
-.image-container img {
-  width: 250px;
-  height: 350px;
+.card img {
+  width: 300px;
+  height: 380px;
+  align-items: center;
+  cursor: pointer;
   object-fit: cover;
-}
-.image-title1 {
-  display: none;
-  position: absolute;
-}
-.image-title {
-  display: contents;
-  position: absolute;
+  border-radius: 20px;
+  transition: transform 0.7s;
 }
 
-.decription {
-  display: contents;
+.card img:hover {
+  transform: scale(1.1);
 }
-.decription1 {
-  display: none;
+
+.description {
+  position: absolute;
+  top: 100%; /* Açıklamanın resmin altından başlaması için */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: top 0.5s; /* Açıklamanın yukarı çıkıp inmesi için animasyon */
+}
+
+.card:hover .description {
+  top: 0; /* Resmin altından açıklamanın gelmesi */
+}
+
+.description ul {
+  margin: 0;
+  padding: 20px;
+  list-style: none;
+}
+
+.description li {
+  font-family: serif;
+  font-size: 20px;
+  padding-left: 20px;
+  position: relative;
+  opacity: 0; /* Açıklamanın yukarıdan aşağı inmesi için başlangıçta görünmez olmalı */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card:hover .description li {
+  opacity: 1; /* Açıklamanın yukarıdan aşağı inmesi için görünür hale gelmesi */
+}
+
+.card p {
+  font-size: 20px;
+  padding: 30px;
+}
+.description li {
+  font-family: serif;
+  font-size: 20px;
+  list-style: " 🏀 ";
+  list-style-position: inside;
+  text-align: left;
+  padding: 20px;
 }
